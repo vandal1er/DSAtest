@@ -82,9 +82,11 @@ class LinkedList
         {
             if (curr->data == value)
             {
-                cout << "value found at index " << counter;
-                break;
+                //cout << "value found at index " << counter;
                 found = true;
+                size--;
+                break;
+                
             }
             counter++;
             pre = curr;
@@ -99,7 +101,7 @@ class LinkedList
             tail = pre;
             pre -> next = nullptr;
         }
-        else
+        else if (found)
         {
             pre->next=curr->next;
         }
@@ -259,7 +261,7 @@ int main()
             if(list.DeleteValue(entry))
             {
                 cout << "No such value found.\n";
-                Pause();
+                //Pause();
                 Pause();
             }
             break;
